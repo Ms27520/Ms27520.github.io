@@ -14,17 +14,19 @@ function PipePair() {
   this.alive = true;
   this.topPipe = pipeLayer.create(0, 0, 'pipe');
   this.bottomPipe = pipeLayer.create(0, 0, 'pipe');
+  this.topPipe.scale.setTo(2, 2);
+  this.bottomPipe.scale.setTo(2, 2);
 }
 
 PipePair.prototype.reset = function() {
-  var gap = global.phaserGame.rnd.integerInRange(settings.gapMin, settings.gapMax);
-  gap = gap / 2;
-  var x = -this.topPipe.width;
-  var y = global.phaserGame.height / 2 - 32;
-  y += global.phaserGame.rnd.integerInRange(-50, 50);
+  var gap = settings.gap / 2;
+
+  var x = global.phaserGame.width;
+  var y = global.phaserGame.height / 2 + (Math.random() > 0.5 ? -1 : 1) * Math.random() * global.phaserGame.height / 6;
+  y -= 50;
 
   this.topPipe.x = x;
-  this.topPipe.y = y - this.topPipe.height - gap;
+  this.topPipe.y = y - gap - this.topPipe.height;
 
   this.bottomPipe.x = x;
   this.bottomPipe.y = y + gap;
@@ -51,7 +53,7 @@ PipePair.prototype.checkScore = function(x) {
   if (this.scored)
     return false;
 
-  if (x < this.topPipe.x) {
+  if (x > this.topPipe.x + this.topPipe.width) {
     this.scored = true;
     return true;
   }
@@ -79,15 +81,15 @@ PipePair.prototype.checkCollision = function(left, top, right, bottom) {
 };
 
 PipePair.prototype.checkOutOfBound = function() {
-  return this.topPipe.x >= global.phaserGame.world.bounds.right;
+  return this.topPipe.x + this.topPipe.width <= global.phaserGame.world.bounds.left;
 };
 
 PipePair.prototype.moveX = function(n) {
   if (!this.alive)
     return;
 
-  this.topPipe.x += n;
-  this.bottomPipe.x += n;
+  this.topPipe.x -= n;
+  this.bottomPipe.x -= n;
 
   if (this.checkOutOfBound())
     this.kill();

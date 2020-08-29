@@ -8,6 +8,11 @@ exports.preloadImage = function(key) {
   global.phaserGame.load.image(key, path);
 };
 
+exports.preloadSpritesheet = function(key, w, h) {
+  var path = 'images/' + key + '.png';
+  global.phaserGame.load.spritesheet(key, path, w, h);
+};
+
 exports.preloadAudio = function(key) {
   var path = 'sounds/' + key + '.mp3';
   global.phaserGame.load.audio(key, path);

@@ -33,8 +33,8 @@ function render() {
 exports.run = function() {
   utils.loadSettingsFromUrl();
 
-  var width = 600;
-  var height = 800;
+  var width = 480;
+  var height = 700;
 
   var availWidth = document.body.offsetWidth;
   var availHeight = document.body.offsetHeight;
@@ -46,7 +46,7 @@ exports.run = function() {
 
   var device = new Phaser.Device();
   if (availWidth >= 320 && availHeight >= 480 && availHeight <= 1280) {
-    if (!device.desktop) {
+    if (!device.desktop || settings.mobile) {
       width = availWidth;
       height = availHeight;
     }

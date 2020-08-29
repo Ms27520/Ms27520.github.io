@@ -1,4 +1,7 @@
-# Flappy Winnie
-深受 [Flappy Frog](https://github.com/tusenpo/FlappyFrog) 之启发而创作
+# FlappyFrog
+The violent **mo**dification of [Don't Touch My Birdie](https://github.com/marksteve/dtmb) by Mark Steve Samson
+licensed under [Creative Com**mo**ns Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
 
-别看你今天闹的欢，小心今后拉清单
+play: https://ms27520.github.io/FlappyFrog/
+
+the weird frog image is **mo**dified from [another frog image](https://amphibian.com/)

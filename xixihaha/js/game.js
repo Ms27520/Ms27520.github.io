@@ -5,28 +5,26 @@ var global = require('global');
 var preloadImage = require('utils').preloadImage;
 var sounds = require('sounds');
 var pipes = require('pipes');
+var clouds = require('clouds');
 
 var settings = global.settings;
 
-var background, ground, bird, scoreText;
-
-var score = 0, gameStarted = false, crashed = false, crashedGround = false;
+var ground, bird;
+var gameStarted = false, crashed = false, crashedGround = false;
+var scoreText, score;
+var timeElapsedText, timeElapsed, startTime;
 
 function createBackground() {
-  global.phaserGame.stage.backgroundColor = '#4ec0ca';
-
-  var height = 512;
-  background = global.phaserGame.add.tileSprite(
-    0,
-    global.phaserGame.world.height - height,
-    global.phaserGame.world.width,
-    height,
-    'background'
-  );
+  var graphics = global.phaserGame.add.graphics(0, 0);
+  graphics.beginFill(0xDDEEFF, 1);
+  graphics.drawRect(0, 0, global.phaserGame.width, global.phaserGame.height);
+  graphics.endFill();
 }
 
 function createGround() {
-  var height = 72;
+  global.phaserGame.world.bounds.height = global.phaserGame.height + 16;
+
+  var height = 32;
   ground = global.phaserGame.add.tileSprite(
     0,
     global.phaserGame.height - height,
@@ -34,32 +32,45 @@ function createGround() {
     height,
     'ground'
   );
+  ground.tileScale.setTo(2, 2);
 }
 
 function createBird() {
   bird = global.phaserGame.add.sprite(
-   0,
-   0,
-   'winnie'
+    global.phaserGame.width / 2,
+    global.phaserGame.height / 2,
+   'frog'
   );
   bird.anchor.setTo(0.5, 0.5);
   bird.body.collideWorldBounds = true;
 }
 
-function createScoreText() {
+function createTexts() {
   scoreText = global.phaserGame.add.text(
     global.phaserGame.width / 2,
-    60,
+    global.phaserGame.height / 4,
     '',
     {
-      font: 'bold 24pt Arial',
+      font: '14px ' + global.font,
       fill: '#fff',
-      align: 'center',
-      stroke: '#666',
-      strokeThickness: 4
+      stroke: '#430',
+      strokeThickness: 4,
+      align: 'center'
     }
   );
   scoreText.anchor.setTo(0.5, 0.5);
+
+  timeElapsedText = global.phaserGame.add.text(
+    global.phaserGame.width / 2,
+    scoreText.y + scoreText.height,
+    '',
+    {
+      font: '14px ' + global.font,
+      fill: '#f00',
+      align: 'center'
+    }
+  );
+  timeElapsedText.anchor.setTo(0.5, 0.5);
 }
 
 function updateGround() {
@@ -67,22 +78,30 @@ function updateGround() {
     return;
   var t = global.phaserGame.time.physicsElapsed;
   var v = settings.speed;
-  if (!gameStarted)
-    v = v / 2;
-  ground.tilePosition.x += t * v;
-  background.tilePosition.x += t * v / 10;
+  ground.tilePosition.x -= t * v / 2;
 }
 
 function updateBird() {
-  if (gameStarted)
+  if (!gameStarted) {
+    var y = global.phaserGame.height / 2;
+    bird.y = y + 8 * Math.cos(global.phaserGame.time.now / 200);
     return;
-  var y = global.phaserGame.height / 2 - 20;
-  bird.y = y + 8 * Math.cos(global.phaserGame.time.now / 200);
+  }
+
+  if (crashed)
+    return;
+
+  var dvy = settings.flap + bird.body.velocity.y;
+  bird.angle = (90 * dvy / settings.flap) - 180;
+  if (bird.angle < 0) {
+    bird.angle = 0;
+  }
 }
 
 function resetBird() {
   bird.body.gravity.y = 0;
-  bird.x = global.phaserGame.width - global.phaserGame.width / 4;
+  bird.x = global.phaserGame.width / 4 + bird.width / 2;
+  bird.angle = 0;
   bird.scale.setTo(1, 1);
 }
 
@@ -92,35 +111,40 @@ function flap() {
 
   if (!crashed) {
     bird.body.velocity.y = -settings.flap;
-    sounds('flap').play();
+    sounds('flap').isPlaying() || sounds('flap').play();
   }
 }
 
 function crash() {
+  bird.angle = -20;
   bird.scale.setTo(1, -1);
+  sounds('score').stop();
+  sounds('ha').play();
   sounds('crash').play();
 }
 
 function crashGround() {
+  bird.angle = -20;
   bird.scale.setTo(1, -1);
-  sounds('ouch').play();
+  sounds('score').stop();
+  !!crashed || sounds('crash').play();
 }
 
 function checkCollision() {
   if (!crashed) {
     if (
-      bird.body.top <= global.phaserGame.world.bounds.top ||
+      (settings.ceiling && bird.body.bottom - bird.body.height <= global.phaserGame.world.bounds.top) ||
       pipes.checkCollision(
-        bird.body.left + 10,
-        bird.body.top + 5,
-        bird.body.right - 10,
-        bird.body.bottom - 10)
+        bird.body.right - bird.body.width,
+        bird.body.bottom - bird.body.height,
+        bird.body.right,
+        bird.body.bottom)
     ) {
       stop();
-      crashed = true;
       crash();
+      crashed = true;
 
-    } else if (pipes.checkScore(bird.body.left)) {
+    } else if (pipes.checkScore(bird.body.right)) {
       addScore();
     }
   }
@@ -128,9 +152,9 @@ function checkCollision() {
   if (!crashedGround) {
     if (bird.body.bottom >= global.phaserGame.world.bounds.bottom) {
       stop();
+      crashGround();
       crashed = true;
       crashedGround = true;
-      crashGround();
       endGame();
     }
   }
@@ -144,20 +168,32 @@ function addScore() {
 
 function updateScoreText() {
   scoreText.setText(
-    '+ %s YEARS'.replace('%s', score * 5)
+    '+ %s s'.replace('%s', score)
   );
+}
+
+function updateTimeElapsed() {
+  if (crashed)
+    return;
+  var a = Math.floor(global.phaserGame.time.elapsedSecondsSince(startTime)) + 1;
+  if (timeElapsed == a)
+    return;
+   timeElapsed = a;
+   timeElapsedText.setText(
+     '- %s s'.replace('%s', timeElapsed)
+   );
 }
 
 var onGameOver;
 function endGame() {
+  global.timeElapsed = timeElapsed;
   global.score = score;
   if (!global.bestScore || global.bestScore < score) {
     global.bestScore = score;
   }
 
   setTimeout(function() {
-    sounds('score').stop();
-    sounds('gameover').play();
+    sounds('hurt').play();
     onGameOver();
   }, 500);
 }
@@ -170,7 +206,9 @@ function stop() {
 }
 
 exports.start = function(cb) {
-  sounds('gameover').stop();
+  startTime = global.phaserGame.time.now;
+
+  sounds('hurt').stop();
   onGameOver = cb;
 
   bird.body.gravity.y = settings.gravity;
@@ -183,6 +221,8 @@ exports.start = function(cb) {
 };
 
 exports.reset = function() {
+  timeElapsedText.setText('');
+
   score = 0;
   gameStarted = false;
   crashed = false;
@@ -196,10 +236,9 @@ exports.reset = function() {
 
 exports.preload = function() {
   pipes.preload();
-
-  preloadImage('winnie');
+  clouds.preload();
+  preloadImage('frog');
   preloadImage('ground');
-  preloadImage('background');
 };
 
 exports.create = function() {
@@ -207,7 +246,8 @@ exports.create = function() {
   pipes.create();
   createBird();
   createGround();
-  createScoreText();
+  createTexts();
+  clouds.create();
 
   global.phaserGame.input.onDown.add(flap);
 
@@ -215,9 +255,11 @@ exports.create = function() {
 };
 
 exports.update = function() {
+  clouds.update();
   updateBird();
   updateGround();
   if (gameStarted) {
+    updateTimeElapsed();
     checkCollision();
     pipes.update();
   }
