@@ -250,12 +250,17 @@
     vim /etc/sysconfig/network-scripts/ifcfg-(tab补全)
     ```
 
-    > 输入
-    > IPADDR=192.168.\*.\*  
-    > NETMASK=255.255.255.0  
-    > GATEWAY=192.168.\*.\*  
+    > 修改以下配置  
     > ONBOOT=yes  
-    > BOOTPROTO=static  
+    > BOOTPROTO=dhcp  
+    > 命令行输入`:wq`  
+    > `reboot`重启CentOS以生效  
+
+    或者使用以下命令重启网卡
+
+    ```code
+    systemctl restart network
+    ```
 
 2. 查看本机的网卡基本信息。
 
