@@ -247,8 +247,15 @@
 
     ```code
     su -
-    不会了
+    vim /etc/sysconfig/network-scripts/ifcfg-(tab补全)
     ```
+
+    > 输入
+    > IPADDR=192.168.\*.\*  
+    > NETMASK=255.255.255.0  
+    > GATEWAY=192.168.\*.\*  
+    > ONBOOT=yes  
+    > BOOTPROTO=static  
 
 2. 查看本机的网卡基本信息。
 
