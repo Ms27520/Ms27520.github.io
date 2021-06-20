@@ -7,6 +7,8 @@
     > 输入用户名及密码，登录后默认进入家目录  
     
     或  
+    > 登录后
+
     ```code
     cd ~
     ```
@@ -32,7 +34,7 @@
 
 5. 使用追加命令，将今天的日期追加到`test01`文件中，查看`test01`。  
 
-    > `vim`打开`test011`  
+    > 使用`vim`打开`test011`  
     > 输入`:`进入末行模式  
     > 输入`r!date`追加当前时间到下一行  
     > 输入`:`进入末行模式，输入`wq`退出并保存  
@@ -45,7 +47,7 @@
 
 ## **实验二：用户组管理**
 
-1. 添加一个新用户`xiaoming`并设置密码为`123`。
+1. 添加一个新用户`xiaoming`并设置密码为`123`。  
     
     ```code
     su -
@@ -85,7 +87,8 @@
 
     > 输入用户名及密码，登录后默认进入家目录  
     
-    或  
+    或 
+    > 登录后
     ```code
     cd ~
     ```
@@ -108,6 +111,7 @@
     或
 
     ```code
+    cd 桌面
     echo "姓名：**   学号：****" >> test03
     ```
 
@@ -122,7 +126,7 @@
 5. 删除桌面目录下的`test02`文件。
 
     ```code
-    rm -rf /home/student/桌面
+    rm -rf /home/student/桌面/test02
     ```
 
 ## **实验四：目录与文件管理（二）**
@@ -152,6 +156,7 @@
     ```code
     su -
     useradd xiaoming
+    groupadd student
     usermod -G student xiaoming
     ```
 
@@ -168,6 +173,8 @@
     或
 
     ```code
+    su - xiaoming
+    cd /home/student
     echo "xiaoming666" >> test03
     ```
 
@@ -196,13 +203,13 @@
 4. 检查系统中是否已安装了`.gz`包中的安装程序。
 
     ```code
-    rpm -qa | grep '软件名'
+    rpm -qa | grep '*.gz包中的软件名'
     ```
 
 5. 若未安装，则安装包依赖关系使用`rmp`安装软件。
 
     ```code
-    rpm -i --force 软件名
+    rpm -i [--force] 软件名
     ```
 
 
@@ -211,7 +218,7 @@
 1. 查看和`httpd`相关的所有进程，显示进程号。
 
     ```code
-    ps -aux | grep httpd
+    ps -aux | grep "httpd"
     ```
 
 2. 查看`cpu`使用率最高的`5`个进程。
@@ -269,17 +276,48 @@
 5. 查看下载的文件内容。
 
     ```code
-    ls /home/student
     cat /home/student/readme
     ```
 
 ## **实验八：ACL 权限管理**
 
 1. 新建用户`xiaoming`和`test`组。
+
+    ```code
+    useradd xiaoming
+    groupadd test
+    ```
+
 2. 将`xiaoming`设置附加组进`test`。
-3. 切换`student`用户设置`/home/student`目录的`shiting` 组ACL权限为rwx。
+
+    ```code
+    usermod -G test xiaoming
+    ```
+
+3. 切换`student`用户，设置`/home/student`目录的`shiting` 组ACL权限为rwx。
+
+    ```code
+    setfacl -m g:shiting:rwx /home/student
+    ```
+
 4. 查看该目录的ACL权限。
-5. 切换`xiaoming`在`/home/student`目录中新建`test04`文件。
+
+    ```code
+    ls -l | grep "student"
+    ```
+
+    或
+
+    ```code
+    getfacl /home/student
+    ```
+5. 切换`xiaoming`，在`/home/student`目录中新建`test04`文件。
+
+    ```code
+    su - xiaoming
+    touch /hoem/student/test04
+    ```
+
 
 ## **实验九：使用yum 安装配置apache 服务器**
 
