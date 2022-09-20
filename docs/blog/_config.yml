@@ -103,6 +103,9 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+  #type: git
+  #repo: git@github.com:Ms27520/Ms27520.github.io.git
+  #branch: blog
 
 search:
   path: search.xml
