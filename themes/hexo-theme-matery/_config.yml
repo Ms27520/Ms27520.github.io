@@ -26,16 +26,16 @@ menu:
   Medias:
     icon: fas fa-list
     children:
-      - name: 
+      - name: 音乐
         url: /musics
         icon: fas fa-music
-      - name: 
+      - name: 影视
         url: /movies
         icon: fas fa-film
-      - name: 
+      - name: 书籍
         url: /books
         icon: fas fa-book
-      - name: 
+      - name: 相册
         url: /galleries
         icon: fas fa-image
 
@@ -44,7 +44,7 @@ menu:
 time:
   enable: true
   year: 2019 # 年份
-  month: 06 # 月份
+  month: 11 # 月份
   date: 28 # 日期
   hour: 00 # 小时
   minute: 00 # 分钟
@@ -72,7 +72,7 @@ cover:
 # 配置首页显示"梦想"的语句.
 dream:
   enable: true
-  showTitle: true
+  showTitle: false
   title: 我的梦想
   text: 不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
 
@@ -85,7 +85,7 @@ music:
     show: 听听音乐
   autoHide: true    # hide automaticaly
   server: netease   #require	music platform: netease, tencent, kugou, xiami, baidu
-  type: playlist    #require song, playlist, album, search, artist
+  type: song    #require song, playlist, album, search, artist
   id: 1374489910    #require	song id / playlist id / album id / search keyword
   fixed: true       # 开启吸底模式
   autoplay: false   # 是否自动播放
@@ -95,7 +95,7 @@ music:
   preload: 'auto'   # 预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.6       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   listFolded: true  # 列表默认折叠
-  hideLrc: true     # 隐藏歌词
+  hideLrc: false     # 隐藏歌词
 
 # Whether to display the musics.
 # 单独的音乐页面.
@@ -104,7 +104,7 @@ musics:
   title:          #非吸底模式有效
     enable: true
     show: 听听音乐
-  server: tencent   #require music platform: netease, tencent, kugou, xiami, baidu
+  server: netease   #require music platform: netease, tencent, kugou, xiami, baidu
   type: playlist    #require song, playlist, album, search, artist
   id: 868001536     #require song id / playlist id / album id / search keyword
   fixed: false      # 开启吸底模式
@@ -166,7 +166,7 @@ socialLink:
   twitter: https://twitter.com/ms27520
   qq: 2579437304
   weibo: https://weibo.com/ms27520
-  zhihu: # https://www.zhihu.com/xxx
+  zhihu: https://www.zhihu.com/people/ms27520
   rss: false # true、false
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
@@ -191,7 +191,7 @@ reward:
   enable: true
   title: 你的赏识是我前进的动力
   wechat: /medias/reward/wechat.png
-  alipay: /medias/reward/alipay.jpg
+  alipay: /medias/reward/alipay.png
 
 # Whether to activate the copyright information of the blog and author when copying the post content.
 # minCharNumber: Approve copyright information by copying at least how many characters.
@@ -667,13 +667,13 @@ jsDelivr:
 # 网站背景图
 background:
   enable: true
-  url: "https://service-5z0sdahv-1306777571.sh.apigw.tencentcs.com/release/"
+  url: "https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302"
 
 # 说说 https://artitalk.js.org/
 artitalk:
-  enable: false
-  appId: # xxxxx
-  appKey: # xxxxxx
+  enable: true
+  appId: FDrbd3IBqdqSUZDbmXSWB5KE-MdYXbMMI
+  appKey: xUK9jQ4cROafEoDtF1qS8Q1c
 
 # 哔哔功能配置
 # 登陆leancloud创建应用。进入应用后，点击创建 Class，将「 Class 名称」命名为 content
@@ -726,3 +726,12 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
   version: "latest" # default v7.1.2
   options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
     #startOnload: true  // default true
+
+# 文章标题
+post:
+  enable: true
+  loop: false # 是否循环
+  showCursor: true # 是否显示光标
+  startDelay: 500 # 开始延迟
+  typeSpeed: 100 # 打字速度
+  backSpeed: 50 # 删除速度

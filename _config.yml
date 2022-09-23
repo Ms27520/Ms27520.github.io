@@ -4,7 +4,7 @@
 
 # Site
 title: 只是芒果
-subtitle: ''
+subtitle: '只是芒果'
 description: ''
 keywords:
 author: 不二臣丶M
@@ -13,8 +13,9 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://ms27520.github.io
-permalink: :year/:month/:day/:title/
+url: https://blog.11l.nl
+#permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink/  # 此处可以自己设置，也可以直接使用 :/abbrlink
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -62,7 +63,7 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 6
+  per_page: 10
   order_by: -date
 
 # Category & Tag
@@ -99,25 +100,57 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: hexo-theme-matery
 
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: ''
-  #type: git
-  #repo: git@github.com:Ms27520/Ms27520.github.io.git
-  #branch: blog
-
 search:
   path: search.xml
   field: post
-
+  
 permalink_pinyin:
   enable: true
   separator: '-' # default: '-'
-
+  
 githubEmojis:
   enable: true
   className: github-emoji
   inject: true
   styles:
   customEmojis:
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+
+hexo_external_link:
+  enable: true
+  enable_base64_encode: true
+  url_param_name: 'u'
+  html_file_name: 'go.html'
+  target_blank: true
+  link_rel: 'external nofollow noopener noreferrer'
+  domain: 'https://blog.11l.nl' # 如果开启了防盗链，填写你的域名
+  safety_chain: true
+
+# abbrlink config
+abbrlink:
+  alg: crc16      #support crc16(default) and crc32
+  rep: hex        #support dec(default) and hex
+#  drafts: false   #(true)Process draft,(false)Do not process draft. false(default) 
+  # Generate categories from directory-tree
+  # depth: the max_depth of directory-tree you want to generate, should > 0
+#  auto_category:
+#     enable: true  #true(default)
+#     depth:        #3(default)
+#     over_write: false 
+#  auto_title: false #enable auto title, it can auto fill the title by path
+#  auto_date: false #enable auto date, it can auto fill the date by time today
+#  force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink. This only updates abbrlink rather than other front variables.
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: ''
