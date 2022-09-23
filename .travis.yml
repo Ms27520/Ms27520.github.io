@@ -5,7 +5,7 @@ node_js:
 cache: npm
 branches:
   only:
-    - blog # build master branch only
+    - main # build master branch only
 before_install:
 - export TZ='Asia/Shanghai'
 - npm install hexo -g
@@ -22,5 +22,5 @@ deploy:
   github-token: $GH_TOKEN
   keep-history: true
   on:
-    branch: blog
+    branch: main
   local-dir: public
