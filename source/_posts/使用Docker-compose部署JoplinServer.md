@@ -1,22 +1,27 @@
 ---
 title: 使用Docker-compose部署JoplinServer
+date: 2021-09-07 09:25:00
 author: 不二臣丶M
-img: /source/images/1.jpg
-top: false
-hide: false
-cover: true
-coverImg: /images/1.jpg
-toc: true
-mathjax: false
-summary: 使用Docker-compose部署JoplinServer
-categories: 笔记
 tags:
   - Joplin
   - JoplinServer
   - 笔记
+categories: 笔记
+keywords: 笔记
+description: 使用Docker-compose部署JoplinServer
+top_img: https://mspicgo.11l.nl/20220924214414.png
+cover:
+toc:
+toc_number:
+toc_style_simple:
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
 abbrlink: 50aa
-date: 2021-09-07 09:25:00
 ---
+
 ## 准备：Linux服务器、本地电脑（或手机？）、域名、人
 
 > 确保已经备份好所有笔记，本文中使用的是Ubuntu20.04系统的服务器
@@ -160,35 +165,35 @@ certbot
 
 > 在"软件商店"安装nginx，或安装宝塔后在弹窗处一键安装
 
-![fc82c376bf7929de67a326ccdff1d7d2.png](https://i.ibb.co/sv3GpBt/fc82c376bf7929de67a326ccdff1d7d2.png)
+![fc82c376bf7929de67a326ccdff1d7d2.png](https://mspicgo.11l.nl/fc82c376bf7929de67a326ccdff1d7d2.png)
 
 (2). 添加站点
 
 > 在"网站"中添加站点，填入自己已经配置好DNS解析的域名，PHP版本选择纯静态，其他默认就好
 
-![81af94ca85680cf9b70a4c4cae44af4f.png](https://i.ibb.co/b712CNK/81af94ca85680cf9b70a4c4cae44af4f.png)
+![81af94ca85680cf9b70a4c4cae44af4f.png](https://mspicgo.11l.nl/81af94ca85680cf9b70a4c4cae44af4f.png)
 
 (3). 设置反向代理
 
 > 打开新建的站点的"设置"，按步骤配置，填入要反代的地址，若JoplinServer在本机，在"目标URL"可填入`http://localhost:22300`或`http://127.0.0.1:22300`，若为其他服务器反代，填入`http://服务器IP:22300`保存即可。
 
-![0b8cdaf4a62ca0f9f9b9b55826d56d7e.png](https://i.ibb.co/RB7dMYy/0b8cdaf4a62ca0f9f9b9b55826d56d7e.png)
+![0b8cdaf4a62ca0f9f9b9b55826d56d7e.png](https://mspicgo.11l.nl/0b8cdaf4a62ca0f9f9b9b55826d56d7e.png)
 
 (4). 申请SSL证书
 
 > 在站点设置中选择"SSL"，本文使用"Let’s Encrypt"申请，选择"验证方式"和"域名"即可。
 
-![550e54b49a741cf90278ea749fd9407a.png](https://i.ibb.co/DCv7GzG/550e54b49a741cf90278ea749fd9407a.png)
+![550e54b49a741cf90278ea749fd9407a.png](https://mspicgo.11l.nl/550e54b49a741cf90278ea749fd9407a.png)
 
 ### 10. 访问域名
 
 - JoplinServer默认账号`admin@localhost`，默认密码`admin`
 
-![199245948fa412a00bb40eacb64d4a45.png](https://i.ibb.co/hMCw5Qr/199245948fa412a00bb40eacb64d4a45.png)
+![199245948fa412a00bb40eacb64d4a45.png](https://mspicgo.11l.nl/199245948fa412a00bb40eacb64d4a45.png)
 
 > 更改账户名和密码
 
-![4ccca67f24f1321c79b2259446dc96c6.png](https://i.ibb.co/D7N6QPY/4ccca67f24f1321c79b2259446dc96c6.png)
+![4ccca67f24f1321c79b2259446dc96c6.png](https://mspicgo.11l.nl/4ccca67f24f1321c79b2259446dc96c6.png)
 
 > 还可在`Admin`中的`User`添加其他用户
 
@@ -196,16 +201,10 @@ certbot
 
 > 打开Joplin的选项
 
-![e7e504f0670e1d8be998d8f228b69be0.png](https://i.ibb.co/8XcGKwD/e7e504f0670e1d8be998d8f228b69be0.png)
+![e7e504f0670e1d8be998d8f228b69be0.png](https://mspicgo.11l.nl/e7e504f0670e1d8be998d8f228b69be0.png)
 
 ## 参考
 
 [官方部署文档](https://github.com/laurent22/joplin/blob/dev/packages/server/README.md)
 
 [复读机的记事本](https://www.cx03.space/2021/02/12/docker-%E9%83%A8%E7%BD%B2-joplin-server/)
-
-note
-
-[bilibili](https://www.bilibili.com/video/BV1Yb411c7Hi)
-
-[youtube](https://www.youtube.com/watch?v=fzN5LndPu3M)

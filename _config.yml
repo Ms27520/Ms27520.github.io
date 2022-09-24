@@ -54,7 +54,7 @@ highlight:
 prismjs:
   enable: true
   preprocess: true
-  line_number: true
+  line_number: false
   tab_replace: ''
 
 # Home page setting
@@ -98,7 +98,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-matery
+#theme: hexo-theme-matery
+theme: butterfly
 
 search:
   path: search.xml
@@ -115,33 +116,33 @@ githubEmojis:
   styles:
   customEmojis:
 
-#feed:
-#  type: atom
-#  path: atom.xml
-#  limit: 20
-#  hub:
-#  content:
-#  content_limit: 140
-#  content_limit_delim: ' '
-#  order_by: -date
-
 feed:
-    limit: 20
-    order_by: "-date"
-    tag_dir: "tag"
-    category_dir: "category"
-    rss:
-        enable: true
-        template: "themes/hexo-theme-matery/layout/_alternate/rss.ejs"
-        output: "rss.xml"
-    atom:
-        enable: true
-        template: "themes/hexo-theme-matery/layout/_alternate/atom.ejs"
-        output: "atom.xml"
-    jsonFeed:
-        enable: true
-        template: "themes/hexo-theme-matery/layout/_alternate/json.ejs"
-        output: "feed.json"
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+
+#feed:
+#    limit: 20
+#    order_by: "-date"
+#    tag_dir: "tag"
+#    category_dir: "category"
+#    rss:
+#        enable: true
+#        template: "themes/hexo-theme-matery/layout/_alternate/rss.ejs"
+#        output: "rss.xml"
+#    atom:
+#        enable: true
+#        template: "themes/hexo-theme-matery/layout/_alternate/atom.ejs"
+#        output: "atom.xml"
+#    jsonFeed:
+#        enable: true
+#        template: "themes/hexo-theme-matery/layout/_alternate/json.ejs"
+#        output: "feed.json"
 
 hexo_external_link:
   enable: true
@@ -167,6 +168,16 @@ abbrlink:
 #  auto_title: false #enable auto title, it can auto fill the title by path
 #  auto_date: false #enable auto date, it can auto fill the date by time today
 #  force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink. This only updates abbrlink rather than other front variables.
+
+markdown:
+  plugins:
+    - plugin:
+      name: '@neilsustc/markdown-it-katex'
+      options:
+        strict: false
+aplayer:
+  meting: true
+  asset_inject: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
