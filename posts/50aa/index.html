@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="friends, 只是芒果">
-    <meta name="description" content="只是芒果">
+    <meta name="keywords" content="使用Docker-compose部署JoplinServer, 只是芒果">
+    <meta name="description" content="使用Docker-compose部署JoplinServer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,7 +28,7 @@
 </script>
 
 
-    <title>friends | 只是芒果</title>
+    <title>使用Docker-compose部署JoplinServer | 只是芒果</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
     
     <style>
@@ -399,367 +399,426 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                只是芒果
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "从来没有真正的绝境, 只有心灵的迷途",
-                            
-                                "Never really desperate, only the lost of the soul",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    //var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    //$('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-    $('.bg-cover').css('background-image', 'url(https://api.yimian.xyz/img?type=wallpaper)');
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
 </script>
 
 
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/source/images/1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <script src="/libs/typed/typed.js"></script>
+					
+						<script>
+							var typedObj = new Typed("#post-title", {
+								strings: [ '使用Docker-compose部署JoplinServer' ],
+								startDelay: 500,
+								typeSpeed: 100,
+								loop: false,
+								backSpeed: 50,
+								showCursor: true
+							});
+						</script>
+					
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<style>
-    .friends-container {
-        margin-top: -100px;
-        margin-bottom: 30px;
-    }
 
-    .friends-container .tag-title {
-        margin-bottom: 10px;
-        color: #3C4858;
-        font-size: 1.75rem;
-        font-weight: 400;
-    }
 
-    .frind-ship img {
-        border-radius: 50%;
-    }
 
-    /* 一下是按钮样式 */
 
-    .frind-ship {
-        padding: 10px 20px;
-    }
+<main class="post-container content">
 
-    .frind-ship .title {
-        display: flex;
-        align-items: center;
-    }
+    
+    //<style>
+//.toc-widget {
+//    width: 345px;
+//    padding-left: 20px;
+//    background-color: rgb(255, 255, 255,0.7);
+//    border-radius: 10px;
+//    box-shadow: 0 10px 35px 2px 
+//rgba(0, 0, 0, .15), 0 5px 15px 
+//rgba(0, 0, 0, .07), 0 2px 5px -5px 
+//rgba(0, 0, 0, .1) !important;
+//}
+//</style>
 
-    .frind-ship .title div {
-        color: #fff;
-        padding-left: 10px;
-    }
-
-    .frind-ship .title img {
-        width: 100px;
-        height: 100px;
-        flex-shrink: 0;
-    }
-
-    .frind-ship .title h1 {
-        padding-bottom: 5px;
-        border-bottom: 2px solid #fff;
-        position: relative;
-        top:-15px;
-        left: 3px;
-    }
-
-    .friend-button {
-        display: flex;
-        justify-content: center;
-        margin-bottom: -27px;
-    }
-
-    .friend-button a {
-        border-radius: 40px;
-    }
-
-    .friend-all .tag-post {
-        margin-bottom: 30px;
-    }
-
-    .button-caution {
-        background-color: #FF4351;
-        border-color: #FF4351;
-        color: #FFF;
-    }
-
-    .button {
-        font-weight: 300;
-        font-size: 16px;
-        font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        text-decoration: none;
-        text-align: center;
-        line-height: 40px;
-        height: 40px;
-        padding: 0 40px;
-        margin: 0;
-        display: inline-block;
-        appearance: none;
-        cursor: pointer;
-        border: none;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-transition-property: all;
-        transition-property: all;
-        -webkit-transition-duration: .3s;
-        transition-duration: .3s;
-    }
-
-    .title {
-        margin-bottom: 0rem !important;
-    }
-
-    .card {
-        margin: 3rem 0 1rem 0 !important;
-    }
-
-    .button-glow.button-caution {
-        -webkit-animation-name: glowing-caution;
-        animation-name: glowing-caution;
-    }
-
-    @-webkit-keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
-
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
-
-    @keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
-
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
-
-    .button-caution:hover {
-        background-color: #ff7680;
-        border-color: #ff7680;
-        color: #FFF;
-        text-decoration: none;
-    }
-
-    .frind-card1 {
-        background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-    }
-
-    .frind-card2 {
-        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-
-    .frind-card3 {
-        background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
-    }
-
-    .frind-card4 {
-        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-    }
-
-    .frind-card5 {
-        background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
-    }
-
-    .frind-card6 {
-        background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
-    }
-
-    .frind-card7 {
-        background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
-    }
-
-    .frind-card8 {
-        background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
-    }
-
-    .frind-card9 {
-        background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
-    }
-
-    .frind-card10 {
-        background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-    }
-
-    article .card {
-        overflow: visible !important;
-    }
-</style>
-
-<main class="content">
-    <div class="container friends-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="tag-title center-align">
-                    <i class="fas fa-address-book"></i>&nbsp;&nbsp;友情链接
-                </div>
-                <article id="friends-link">
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
                     
-                    
-                    <div class="row tags-posts friend-all">
+                    <div class="article-tag">
                         
+                            <a href="/tags/Joplin/">
+                                <span class="chip bg-color">Joplin</span>
+                            </a>
                         
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card1">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="https://blog.lrike.top/image/ProfilePicture/CatWraith.ico" alt="img">
-                                        <div>
-                                            <h1 class="friend-name">七月壹</h1>
-                                            <p style="position: relative;top: -35px;">凡心所向，素履以往。生如逆旅，一苇以航。</p>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://blog.lrike.top" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <a href="/tags/JoplinServer/">
+                                <span class="chip bg-color">JoplinServer</span>
+                            </a>
                         
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card2">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="http://image.luokangyuan.com/1_qq_27922023.jpg" alt="img">
-                                        <div>
-                                            <h1 class="friend-name">码酱</h1>
-                                            <p style="position: relative;top: -35px;">我不是大佬，只是在追寻大佬的脚步</p>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="http://luokangyuan.com/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            前去学习
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card3">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="http://image.luokangyuan.com/4027734.jpeg" alt="img">
-                                        <div>
-                                            <h1 class="friend-name">闪烁之狐</h1>
-                                            <p style="position: relative;top: -35px;">编程界大佬，技术牛，人还特别好，不懂的都可以请教大佬</p>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://blinkfox.github.io/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            前去学习
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card4">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="http://image.luokangyuan.com/avatar.jpg" alt="img">
-                                        <div>
-                                            <h1 class="friend-name">ja_rome</h1>
-                                            <p style="position: relative;top: -35px;">平凡的脚步也可以走出伟大的行程</p>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://me.csdn.net/jlh912008548" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            前去学习
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
                         
                     </div>
                     
-                </article>
-            </div>
-        </div>
-
-        
-            <div class="card">
-                <div class="card-content">
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-09-07
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-09-24
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    682
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    2 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
         
 
-        <div class="card">
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="准备：Linux服务器、本地电脑（或手机？）、域名、人"><a href="#准备：Linux服务器、本地电脑（或手机？）、域名、人" class="headerlink" title="准备：Linux服务器、本地电脑（或手机？）、域名、人"></a>准备：Linux服务器、本地电脑（或手机？）、域名、人</h2><blockquote>
+<p>确保已经备份好所有笔记，本文中使用的是Ubuntu20.04系统的服务器</p>
+</blockquote>
+<hr>
+<h3 id="1-更新系统"><a href="#1-更新系统" class="headerlink" title="1. 更新系统"></a>1. 更新系统</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt</span> upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="2-安装并启动Docker"><a href="#2-安装并启动Docker" class="headerlink" title="2. 安装并启动Docker"></a>2. 安装并启动Docker</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-sSL</span> https://get.docker.com/ <span class="token operator">|</span> <span class="token function">sh</span>
+systemctl <span class="token builtin class-name">enable</span> <span class="token function">docker</span> <span class="token operator">&amp;&amp;</span> systemctl start <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="3-安装Docker-compose"><a href="#3-安装Docker-compose" class="headerlink" title="3. 安装Docker-compose"></a>3. 安装Docker-compose</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> <span class="token function">docker-compose</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="4-创建Joplin工作目录并进入"><a href="#4-创建Joplin工作目录并进入" class="headerlink" title="4. 创建Joplin工作目录并进入"></a>4. 创建Joplin工作目录并进入</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> Joplin <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> Joplin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="5-创建docker-compose-yml文件，并粘贴配置内容"><a href="#5-创建docker-compose-yml文件，并粘贴配置内容" class="headerlink" title="5. 创建docker-compose.yml文件，并粘贴配置内容"></a>5. 创建<code>docker-compose.yml</code>文件，并粘贴配置内容</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> docker-compose.yml  <span class="token comment">#或者使用其他你喜欢的编辑器</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+    <span class="token key atrule">db</span><span class="token punctuation">:</span>
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres<span class="token punctuation">:</span><span class="token number">13.1</span>
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token string">"5432:5432"</span>
+        <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+        <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> APP_PORT=22300
+            <span class="token punctuation">-</span> POSTGRES_PASSWORD=密码
+            <span class="token punctuation">-</span> POSTGRES_USER=joplin
+            <span class="token punctuation">-</span> POSTGRES_DB=joplin
+    <span class="token key atrule">app</span><span class="token punctuation">:</span>
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> joplin/server<span class="token punctuation">:</span>latest
+        <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> db
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token string">"22300:22300"</span>
+        <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+        <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> APP_BASE_URL=https<span class="token punctuation">:</span>//你的域名/
+            <span class="token punctuation">-</span> DB_CLIENT=pg
+            <span class="token punctuation">-</span> POSTGRES_PASSWORD=密码
+            <span class="token punctuation">-</span> POSTGRES_DATABASE=joplin
+            <span class="token punctuation">-</span> POSTGRES_USER=joplin
+            <span class="token punctuation">-</span> POSTGRES_PORT=5432
+            <span class="token punctuation">-</span> POSTGRES_HOST=db<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>注意把<code>你的域名</code>更换为你要用的域名，后续在Joplin配置中也需要填入此域名，<code>密码</code>也需要改成你喜欢的</li>
+</ul>
+<h3 id="6-开始部署"><a href="#6-开始部署" class="headerlink" title="6. 开始部署"></a>6. 开始部署</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>-d 表示后台运行</li>
+</ul>
+<h3 id="7-域名配置好解析"><a href="#7-域名配置好解析" class="headerlink" title="7. 域名配置好解析"></a>7. 域名配置好解析</h3><h3 id="8-nginx反向代理实现https"><a href="#8-nginx反向代理实现https" class="headerlink" title="8. nginx反向代理实现https"></a>8. nginx反向代理实现https</h3><p>(1). 安装并启动nginx</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> nginx
+systemctl <span class="token builtin class-name">enable</span> nginx <span class="token operator">&amp;&amp;</span> systemctl start nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>(2). 编辑nginx配置</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /etc/nginx/conf.d/joplin.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-conf" data-language="conf"><code class="language-conf">server {
+    server_name  你的域名;
+    listen 80;
+    #return 301 https://$server_name$request_uri;
+    location / {
+        proxy_pass http://127.0.0.1:22300;
+        proxy_set_header  Host                $http_host;
+        proxy_set_header  X-Real-IP           $remote_addr;
+        proxy_set_header  X-Forwarded-Ssl     on;
+        proxy_set_header  X-Forwarded-For     $proxy_add_x_forwarded_for;
+        proxy_set_header  X-Forwarded-Proto   $scheme;
+        proxy_set_header  X-Frame-Options     SAMEORIGIN;
+
+        client_max_body_size        100m;
+        client_body_buffer_size     128k;
+
+        proxy_buffer_size           4k;
+        proxy_buffers               4 32k;
+        proxy_busy_buffers_size     64k;
+        proxy_temp_file_write_size  64k;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(3). 安装 certbot 配置https</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> python-certbot-nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4). 使用 certbot</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">certbot<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(5). 跟着提示走（不详说了，报错说明你nginx配置有问题请<code>nginx -t</code>）</p>
+<p>(6). 然后选<code>redirect</code>（配置自动重定向https）</p>
+<p>(7). 然后<code>nginx -s reload</code></p>
+<h3 id="9-使用宝塔配置反向代理实现https（与7二选一）"><a href="#9-使用宝塔配置反向代理实现https（与7二选一）" class="headerlink" title="9. 使用宝塔配置反向代理实现https（与7二选一）"></a>9. 使用宝塔配置反向代理实现https（与7二选一）</h3><p>(1). 安装宝塔并安装相关环境(nginx)</p>
+<blockquote>
+<p>在”软件商店”安装nginx，或安装宝塔后在弹窗处一键安装</p>
+</blockquote>
+<p><img src="https://i.ibb.co/sv3GpBt/fc82c376bf7929de67a326ccdff1d7d2.png" alt="fc82c376bf7929de67a326ccdff1d7d2.png"></p>
+<p>(2). 添加站点</p>
+<blockquote>
+<p>在”网站”中添加站点，填入自己已经配置好DNS解析的域名，PHP版本选择纯静态，其他默认就好</p>
+</blockquote>
+<p><img src="https://i.ibb.co/b712CNK/81af94ca85680cf9b70a4c4cae44af4f.png" alt="81af94ca85680cf9b70a4c4cae44af4f.png"></p>
+<p>(3). 设置反向代理</p>
+<blockquote>
+<p>打开新建的站点的”设置”，按步骤配置，填入要反代的地址，若JoplinServer在本机，在”目标URL”可填入<code>http://localhost:22300</code>或<code>http://127.0.0.1:22300</code>，若为其他服务器反代，填入<code>http://服务器IP:22300</code>保存即可。</p>
+</blockquote>
+<p><img src="https://i.ibb.co/RB7dMYy/0b8cdaf4a62ca0f9f9b9b55826d56d7e.png" alt="0b8cdaf4a62ca0f9f9b9b55826d56d7e.png"></p>
+<p>(4). 申请SSL证书</p>
+<blockquote>
+<p>在站点设置中选择”SSL”，本文使用”Let’s Encrypt”申请，选择”验证方式”和”域名”即可。</p>
+</blockquote>
+<p><img src="https://i.ibb.co/DCv7GzG/550e54b49a741cf90278ea749fd9407a.png" alt="550e54b49a741cf90278ea749fd9407a.png"></p>
+<h3 id="10-访问域名"><a href="#10-访问域名" class="headerlink" title="10. 访问域名"></a>10. 访问域名</h3><ul>
+<li>JoplinServer默认账号<code>admin@localhost</code>，默认密码<code>admin</code></li>
+</ul>
+<p><img src="https://i.ibb.co/hMCw5Qr/199245948fa412a00bb40eacb64d4a45.png" alt="199245948fa412a00bb40eacb64d4a45.png"></p>
+<blockquote>
+<p>更改账户名和密码</p>
+</blockquote>
+<p><img src="https://i.ibb.co/D7N6QPY/4ccca67f24f1321c79b2259446dc96c6.png" alt="4ccca67f24f1321c79b2259446dc96c6.png"></p>
+<blockquote>
+<p>还可在<code>Admin</code>中的<code>User</code>添加其他用户</p>
+</blockquote>
+<h3 id="11-在Joplin中配置"><a href="#11-在Joplin中配置" class="headerlink" title="11. 在Joplin中配置"></a>11. 在Joplin中配置</h3><blockquote>
+<p>打开Joplin的选项</p>
+</blockquote>
+<p><img src="https://i.ibb.co/8XcGKwD/e7e504f0670e1d8be998d8f228b69be0.png" alt="e7e504f0670e1d8be998d8f228b69be0.png"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/laurent22/joplin/blob/dev/packages/server/README.md">官方部署文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cx03.space/2021/02/12/docker-%E9%83%A8%E7%BD%B2-joplin-server/">复读机的记事本</a></p>
+<p>note</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411c7Hi">bilibili</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=fzN5LndPu3M">youtube</a></p>
+
+                
+            </div>
+            <hr/>
 
             
 
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">不二臣丶M</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.11l.nl/posts/50aa/">https://blog.11l.nl/posts/50aa/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">不二臣丶M</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Joplin/">
+                                    <span class="chip bg-color">Joplin</span>
+                                </a>
+                            
+                                <a href="/tags/JoplinServer/">
+                                    <span class="chip bg-color">JoplinServer</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
             
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
 
             
+        </div>
+    </div>
 
-            
+    
 
-            
+    
 
-            
-                <style>
+    
+
+    
+
+    
+
+    
+        <style>
     .waline-card {
         margin: 1.5rem auto;
     }
@@ -975,21 +1034,226 @@
         <i class="fas fa-comments"></i>
     </a>
 </div>
-            
+    
 
-            
+    
 
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/3eeb/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            不二臣丶M
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/50aa/">
+                    <div class="card-image">
+                        
+                        <img src="/source/images/1.jpg" class="responsive-img" alt="使用Docker-compose部署JoplinServer">
+                        
+                        <span class="card-title">使用Docker-compose部署JoplinServer</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            使用Docker-compose部署JoplinServer
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Joplin/">
+                        <span class="chip bg-color">Joplin</span>
+                    </a>
+                    
+                    <a href="/tags/JoplinServer/">
+                        <span class="chip bg-color">JoplinServer</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
         </div>
     </div>
-</main>
+</div>
 
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
-        $('#friends-link').masonry({
-            itemSelector: '.friend-div'
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
     });
 </script>
+
+    
+
+</main>
+
+
 
 
     <footer class="page-footer bg-color">
