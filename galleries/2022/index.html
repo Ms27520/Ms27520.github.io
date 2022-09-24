@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, 只是芒果">
+    <meta name="keywords" content="2022, 只是芒果">
     <meta name="description" content="只是芒果">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -28,7 +28,7 @@
 </script>
 
 
-    <title>contact | 只是芒果</title>
+    <title>2022 | 只是芒果</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
     
     <style>
@@ -399,326 +399,59 @@
 
 </header>
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-<link rel="stylesheet" type="text/css" href="/css/barrager.css">
-<script src="/libs/valine/av-min.js"></script>
-<script src="/libs/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="/js/jquery.barrager.js"></script>
+    <link rel="stylesheet" href="/css/gallery.css">
 
-<div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                只是芒果
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "从来没有真正的绝境, 只有心灵的迷途",
-                            
-                                "Never really desperate, only the lost of the soul",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
+<link type="text/css" href="/libs/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link type="text/css" href="/libs/justifiedGallery/justifiedGallery.min.css" rel="stylesheet">
 
 
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    //var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    //$('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-    $('.bg-cover').css('background-image', 'url(https://api.yimian.xyz/img?type=wallpaper)');
-</script>
-
-
-    </div>
-</div>
-
-<style>
-    #send{
-        margin-bottom: 10px;
-        width: 49%;
-        background-color: #0ba360;
-    }
-    #clear{
-        margin-bottom: 10px;
-        width: 49%;
-        background-color: #e7c65c;
-    }
-    p{
-        text-align: center;
-    }
-</style>
-<main class="content">
-    <div id="contact" class="container chip-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="tag-title center-align">
-                    <i class="fas fa-comments"></i>&nbsp;&nbsp;留言板
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <script src="/libs/typed/typed.js"></script>
+					
+						<script>
+							var typedObj = new Typed("#post-title", {
+								strings: [ '2022' ],
+								startDelay: 500,
+								typeSpeed: 100,
+								loop: false,
+								backSpeed: 50,
+								showCursor: true
+							});
+						</script>
+					
                 </div>
-                
             </div>
-            <!--valine评论弹幕-->
-            
         </div>
-
-        <!--其他评论card-->
-        <div class="card">
-            
-
-            
-
-            
-
-            
-
-            
-                <style>
-    .waline-card {
-        margin: 1.5rem auto;
-    }
-    .waline-card .card-content {
-        padding: 20px 20px 5px 20px;
-    }
-
-    #waline p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-    #waline blockquote p {
-        text-indent: 0.2rem;
-    }
-    #waline a {
-        padding: 0 2px;
-        color: #4cbf30;
-        font-weight: 500;
-        text-decoration: none;
-    }
-    #waline img {
-        max-width: 100%;
-        cursor: pointer;
-    }
-    #waline ol li {
-        list-style-type: decimal;
-    }
-    #waline ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-    #waline ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-    #waline ul li {
-        list-style-type: disc;
-    }
-    #waline ul ul li {
-        list-style-type: circle;
-    }
-    #waline table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-    #waline table, th, td {
-        border: 0;
-    }
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-    #waline table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-    #waline table td {
-        min-width: 80px;
-    }
-    #waline h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-    #waline h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-    #waline h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-    #waline h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-    #waline h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-    #waline h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-    #waline p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-    #waline hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-    #waline blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-    #waline pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-    #waline code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-    #waline pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-    #waline pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-    #waline code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-    #waline [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-    #waline b,
-    strong {
-        font-weight: bold;
-    }
-    #waline dfn {
-        font-style: italic;
-    }
-    #waline small {
-        font-size: 85%;
-    }
-    #waline cite {
-        font-style: normal;
-    }
-    #waline mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-    #waline table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-    #waline table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-    #waline table td {
-        min-width: 80px;
-    }
-    #waline [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-  </style>
-  
-  <div class="card waline-card" id="waline-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
     </div>
-    <div id="waline" class="card-content" style="display: grid">
-    </div>
-  </div>
-  
-
-  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="/libs/waline/Waline.min.js"></script>
-  <script>
-    new Waline({
-        el: '#waline',
-        serverURL: 'https://waline.11l.nl',
-        avatar: 'mm'    
-    });
-  </script> 
-  <!-- 直达评论 -->
-<div id="to_comment" class="comment-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#waline-card" title="直达评论">
-        <i class="fas fa-comments"></i>
-    </a>
 </div>
-            
 
-            
+  
 
-            
-
-        </div>
+<div class="container">
+    <div class="photo-wrapper">
+        
+            <div class="waterfall" id="encrypt-blog">
+                <a href="/medias/images/01.jpg"     class="photo-item" rel="example_group"     data-fancybox="images">      <img src="/medias/images/01.jpg"       alt=/medias/images/01.jpg>
+    </a><a href="/medias/images/02.jpg"     class="photo-item" rel="example_group"     data-fancybox="images">      <img src="/medias/images/02.jpg"       alt=/medias/images/02.jpg>
+    </a><a href="/medias/images/03.jpg"     class="photo-item" rel="example_group"     data-fancybox="images">      <img src="/medias/images/03.jpg"       alt=/medias/images/03.jpg>
+    </a>
+            </div>
+        
     </div>
-</main>
+</div>
 
+<script src="/libs/fancybox/fancybox.js"></script>
+<script src="/libs/justifiedGallery/justifiedGallery.min.js"></script>
+<script>
+
+    $("a[rel=example_group]").fancybox();
+    $("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
+
+</script>
 
     <footer class="page-footer bg-color">
     
