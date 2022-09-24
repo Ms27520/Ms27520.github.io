@@ -76,6 +76,9 @@
     <title><%= pageTitle %></title>
     <link rel="icon" type="<%= iconType %>" href="<%- theme.jsDelivr.url %><%- url_for(theme.favicon) %>">
     <%- partial('_partial/main-style') %>
+    <link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= full_url_for(`/rss.xml}`) %>" />
+    <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= full_url_for(`/atom.xml`) %>" />
+    <link rel="alternate" type="application/json" title="<%= config.title %>" href="<%= full_url_for(`/feed.json`) %>" />
 
     <script src="/libs/waifu/autoload.js"></script>
     <script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.jquery) %>"></script>

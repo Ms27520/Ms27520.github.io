@@ -151,7 +151,7 @@ logo: /medias/logo.png
 # including the display name of the button, the font awesome icon, and the hyperlink to the button.
 # 首页 banner 中的第二个按钮的配置，包括按钮的显示名称、font awesome图标和按钮的超链接.
 indexbtn:
-  enable: true
+  enable: false
   name: Github
   icon: fab fa-github-alt
   url: https://github.com/ms27520/waline
@@ -162,12 +162,12 @@ indexbtn:
 socialLink:
   github:  https://github.com/ms27520
   email: ms27520@qq.com
-  facebook: https://www.facebook.com/ms27520
-  twitter: https://twitter.com/ms27520
+  #facebook: https://www.facebook.com/ms27520
+  #twitter: https://twitter.com/ms27520
   qq: 2579437304
-  weibo: https://weibo.com/ms27520
+  #weibo: https://weibo.com/ms27520
   zhihu: https://www.zhihu.com/people/ms27520
-  rss: false # true、false
+  rss: true # true、false
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -207,7 +207,7 @@ copyright:
 # 是否激活mathjax数学公式，这是全局配置，但文章仍然不会都开启mathjax渲染，
 # 考虑到mathjax加载比较耗时，你还需要在需要渲染的文章的Front-matter中再加上`mathjax: true`才行.
 mathjax:
-  enable: false
+  enable: true
   cdn: https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # Post word count, reading duration, site total word count.
@@ -309,7 +309,7 @@ mySkills:
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的相册"图片，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 myGallery:
-  enable: true
+  enable: false
   data:
     - /medias/featureimages/0.jpg
     - /medias/featureimages/1.jpg
@@ -369,7 +369,7 @@ livere:
 # 介绍: https://cloud.tencent.com/document/product/1110/36841
 # 管理验证码: https://console.cloud.tencent.com/captcha/graphical
 tcaptcha:
-  enable: true
+  enable: false
   appid: xxxxxxxxxx # 你的appid
 
 # The configuration of the Valine comment module is not activated by default.
@@ -397,7 +397,7 @@ waline:
   enable: true
   # Waline 服务端部署参考 https://waline.js.org/guide/server/intro.html 客户端和服务端版本需一致
   # 下面是一个例子，请替换成自己的服务端
-  serverURL: https://11l.vercel.app
+  serverURL: https://waline.11l.nl
   avatar: 'mp' # Gravatar style : ''/mp/identicon/monsterid/wavatar/retro/hide
 
 changyan:
@@ -583,7 +583,7 @@ tidio:
   enable: false
   public_key:
 
-# 腾讯兔小巢，见https://txc.qq.com/
+# 腾讯兔小巢，见 https://txc.qq.com/
 tuxiaochao:
   enable: false
   productId:
@@ -617,7 +617,7 @@ sharejs:
 # addthis文章分享模块.
 addthis:
   enable: false
-  pubid:  # 前往https://www.addthis.com/获取
+  pubid:  # 前往 https://www.addthis.com/ 获取
 
 # 打字效果副标题.
 # 如果有符号 ‘ ，请在 ’ 前面加上 \
@@ -672,8 +672,8 @@ background:
 # 说说 https://artitalk.js.org/
 artitalk:
   enable: true
-  appId: FDrbd3IBqdqSUZDbmXSWB5KE-MdYXbMMI
-  appKey: xUK9jQ4cROafEoDtF1qS8Q1c
+  appId: 5O4Rjme3lLwIB22kSn1GmDF8-MdYXbMMI
+  appKey: nGoa7QQZI37IOm7ni4FLCQV1
 
 # 哔哔功能配置
 # 登陆leancloud创建应用。进入应用后，点击创建 Class，将「 Class 名称」命名为 content

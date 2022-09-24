@@ -115,15 +115,33 @@ githubEmojis:
   styles:
   customEmojis:
 
+#feed:
+#  type: atom
+#  path: atom.xml
+#  limit: 20
+#  hub:
+#  content:
+#  content_limit: 140
+#  content_limit_delim: ' '
+#  order_by: -date
+
 feed:
-  type: atom
-  path: atom.xml
-  limit: 20
-  hub:
-  content:
-  content_limit: 140
-  content_limit_delim: ' '
-  order_by: -date
+    limit: 20
+    order_by: "-date"
+    tag_dir: "tag"
+    category_dir: "category"
+    rss:
+        enable: true
+        template: "themes/hexo-theme-matery/layout/_alternate/rss.ejs"
+        output: "rss.xml"
+    atom:
+        enable: true
+        template: "themes/hexo-theme-matery/layout/_alternate/atom.ejs"
+        output: "atom.xml"
+    jsonFeed:
+        enable: true
+        template: "themes/hexo-theme-matery/layout/_alternate/json.ejs"
+        output: "feed.json"
 
 hexo_external_link:
   enable: true

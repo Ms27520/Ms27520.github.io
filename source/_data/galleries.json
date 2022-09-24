@@ -1,0 +1,57 @@
+[
+    {
+      "name": "2022",
+      "cover": "/medias/images/01.jpg",
+      "description": "我的图床",
+      "photos": [
+        "/medias/images/01.jpg",
+        "/medias/images/02.jpg",
+        "/medias/images/03.jpg"
+        ]
+    },
+    {
+      "name": "2021",
+      "cover": "/medias/banner/0.jpg",
+      "description": "banner 图片展示",
+      "photos": [
+        "/medias/banner/0.jpg",
+        "/medias/banner/1.jpg",
+        "/medias/banner/2.jpg",
+        "/medias/banner/3.jpg",
+        "/medias/banner/4.jpg",
+        "/medias/banner/5.jpg",
+        "/medias/banner/6.jpg"
+        ]
+    },
+    {
+      "name": "哈哈",
+      "cover": "/medias/featureimages/1.jpg",
+      "description": "featureimages 图片展示",
+      "photos": [
+        "/medias/featureimages/0.jpg",
+        "/medias/featureimages/1.jpg",
+        "/medias/featureimages/2.jpg",
+        "/medias/featureimages/3.jpg",
+        "/medias/featureimages/4.jpg",
+        "/medias/featureimages/5.jpg",
+        "/medias/featureimages/6.jpg",
+        "/medias/featureimages/7.jpg",
+        "/medias/featureimages/8.jpg",
+        "/medias/featureimages/9.jpg",
+        "/medias/featureimages/10.jpg",
+        "/medias/featureimages/11.jpg",
+        "/medias/featureimages/12.jpg",
+        "/medias/featureimages/13.jpg",
+        "/medias/featureimages/14.jpg",
+        "/medias/featureimages/15.jpg",
+        "/medias/featureimages/16.jpg",
+        "/medias/featureimages/17.jpg",
+        "/medias/featureimages/18.jpg",
+        "/medias/featureimages/19.jpg",
+        "/medias/featureimages/20.jpg",
+        "/medias/featureimages/21.jpg",
+        "/medias/featureimages/22.jpg",
+        "/medias/featureimages/23.jpg"
+      ]
+    }
+]
