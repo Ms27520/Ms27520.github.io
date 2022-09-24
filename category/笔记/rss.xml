@@ -7,6 +7,7 @@
         <language>zh-CN</language>
         <pubDate>Tue, 07 Sep 2021 09:25:00 +0800</pubDate>
         <lastBuildDate>Tue, 07 Sep 2021 09:25:00 +0800</lastBuildDate>
+        <category>Hexo</category>
         <category>Joplin</category>
         <category>JoplinServer</category>
         <category>笔记</category>
@@ -18,22 +19,23 @@
             <category>JoplinServer</category>
             <category>笔记</category>
             <pubDate>Tue, 07 Sep 2021 09:25:00 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;/assets/css/APlayer.min.css&#34;&gt;&lt;script src=&#34;/assets/js/APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;准备：Linux服务器、本地电脑（或手机？）、域名、人&#34;&gt;&lt;a href=&#34;#准备：Linux服务器、本地电脑（或手机？）、域名、人&#34; class=&#34;headerlink&#34; title=&#34;准备：Linux服务器、本地电脑（或手机？）、域名、人&#34;&gt;&lt;/a&gt;准备：Linux服务器、本地电脑（或手机？）、域名、人&lt;/h2&gt;&lt;blockquote&gt;
+            <description><![CDATA[ &lt;h2 id=&#34;准备：Linux服务器、本地电脑（或手机？）、域名、人&#34;&gt;准备：Linux服务器、本地电脑（或手机？）、域名、人&lt;/h2&gt;
+&lt;blockquote&gt;
 &lt;p&gt;确保已经备份好所有笔记，本文中使用的是Ubuntu20.04系统的服务器&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;1-更新系统&#34;&gt;&lt;a href=&#34;#1-更新系统&#34; class=&#34;headerlink&#34; title=&#34;1. 更新系统&#34;&gt;&lt;/a&gt;1. 更新系统&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; upgrade&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;2-安装并启动Docker&#34;&gt;&lt;a href=&#34;#2-安装并启动Docker&#34; class=&#34;headerlink&#34; title=&#34;2. 安装并启动Docker&#34;&gt;&lt;/a&gt;2. 安装并启动Docker&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-sSL&lt;/span&gt; https://get.docker.com/ &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt;
-systemctl &lt;span class=&#34;token builtin class-name&#34;&gt;enable&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;docker&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start &lt;span class=&#34;token function&#34;&gt;docker&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;3-安装Docker-compose&#34;&gt;&lt;a href=&#34;#3-安装Docker-compose&#34; class=&#34;headerlink&#34; title=&#34;3. 安装Docker-compose&#34;&gt;&lt;/a&gt;3. 安装Docker-compose&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;docker-compose&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;4-创建Joplin工作目录并进入&#34;&gt;&lt;a href=&#34;#4-创建Joplin工作目录并进入&#34; class=&#34;headerlink&#34; title=&#34;4. 创建Joplin工作目录并进入&#34;&gt;&lt;/a&gt;4. 创建Joplin工作目录并进入&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;mkdir&lt;/span&gt; Joplin &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; Joplin&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;5-创建docker-compose-yml文件，并粘贴配置内容&#34;&gt;&lt;a href=&#34;#5-创建docker-compose-yml文件，并粘贴配置内容&#34; class=&#34;headerlink&#34; title=&#34;5. 创建docker-compose.yml文件，并粘贴配置内容&#34;&gt;&lt;/a&gt;5. 创建&lt;code&gt;docker-compose.yml&lt;/code&gt;文件，并粘贴配置内容&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; docker-compose.yml  &lt;span class=&#34;token comment&#34;&gt;#或者使用其他你喜欢的编辑器&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre class=&#34;line-numbers language-yaml&#34; data-language=&#34;yaml&#34;&gt;&lt;code class=&#34;language-yaml&#34;&gt;&lt;span class=&#34;token key atrule&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;3&#39;&lt;/span&gt;
+&lt;h3 id=&#34;1-更新系统&#34;&gt;1. 更新系统&lt;/h3&gt;
+&lt;pre class=&#34;language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; upgrade&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;2-安装并启动Docker&#34;&gt;2. 安装并启动Docker&lt;/h3&gt;
+&lt;pre class=&#34;language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-sSL&lt;/span&gt; https://get.docker.com/ &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt;
+systemctl &lt;span class=&#34;token builtin class-name&#34;&gt;enable&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;docker&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start &lt;span class=&#34;token function&#34;&gt;docker&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;3-安装Docker-compose&#34;&gt;3. 安装Docker-compose&lt;/h3&gt;
+&lt;pre class=&#34;language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;docker-compose&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;4-创建Joplin工作目录并进入&#34;&gt;4. 创建Joplin工作目录并进入&lt;/h3&gt;
+&lt;pre class=&#34;language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;mkdir&lt;/span&gt; Joplin &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; Joplin&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;5-创建docker-compose-yml文件，并粘贴配置内容&#34;&gt;5. 创建&lt;code&gt;docker-compose.yml&lt;/code&gt;文件，并粘贴配置内容&lt;/h3&gt;
+&lt;pre class=&#34;language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; docker-compose.yml  &lt;span class=&#34;token comment&#34;&gt;#或者使用其他你喜欢的编辑器&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;language-yaml&#34; data-language=&#34;yaml&#34;&gt;&lt;code class=&#34;language-yaml&#34;&gt;&lt;span class=&#34;token key atrule&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;3&#39;&lt;/span&gt;
 &lt;span class=&#34;token key atrule&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;
     &lt;span class=&#34;token key atrule&#34;&gt;db&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;
         &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; postgres&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;13.1&lt;/span&gt;
@@ -59,24 +61,23 @@ systemctl &lt;span class=&#34;token builtin class-name&#34;&gt;enable&lt;/span&g
             &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; POSTGRES_DATABASE=joplin
             &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; POSTGRES_USER=joplin
             &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; POSTGRES_PORT=5432
-            &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; POSTGRES_HOST=db&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
+            &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; POSTGRES_HOST=db&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;注意把&lt;code&gt;你的域名&lt;/code&gt;更换为你要用的域名，后续在Joplin配置中也需要填入此域名，&lt;code&gt;密码&lt;/code&gt;也需要改成你喜欢的&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;6-开始部署&#34;&gt;&lt;a href=&#34;#6-开始部署&#34; class=&#34;headerlink&#34; title=&#34;6. 开始部署&#34;&gt;&lt;/a&gt;6. 开始部署&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;docker-compose&lt;/span&gt; up &lt;span class=&#34;token parameter variable&#34;&gt;-d&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
+&lt;h3 id=&#34;6-开始部署&#34;&gt;6. 开始部署&lt;/h3&gt;
+&lt;pre class=&#34;language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;docker-compose&lt;/span&gt; up &lt;span class=&#34;token parameter variable&#34;&gt;-d&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;-d 表示后台运行&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;7-域名配置好解析&#34;&gt;&lt;a href=&#34;#7-域名配置好解析&#34; class=&#34;headerlink&#34; title=&#34;7. 域名配置好解析&#34;&gt;&lt;/a&gt;7. 域名配置好解析&lt;/h3&gt;&lt;h3 id=&#34;8-nginx反向代理实现https&#34;&gt;&lt;a href=&#34;#8-nginx反向代理实现https&#34; class=&#34;headerlink&#34; title=&#34;8. nginx反向代理实现https&#34;&gt;&lt;/a&gt;8. nginx反向代理实现https&lt;/h3&gt;&lt;p&gt;(1). 安装并启动nginx&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; nginx
-systemctl &lt;span class=&#34;token builtin class-name&#34;&gt;enable&lt;/span&gt; nginx &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start nginx&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
+&lt;h3 id=&#34;7-域名配置好解析&#34;&gt;7. 域名配置好解析&lt;/h3&gt;
+&lt;h3 id=&#34;8-nginx反向代理实现https&#34;&gt;8. nginx反向代理实现https&lt;/h3&gt;
+&lt;p&gt;(1). 安装并启动nginx&lt;/p&gt;
+&lt;pre class=&#34;language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; nginx
+systemctl &lt;span class=&#34;token builtin class-name&#34;&gt;enable&lt;/span&gt; nginx &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start nginx&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;(2). 编辑nginx配置&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; /etc/nginx/conf.d/joplin.conf&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre class=&#34;line-numbers language-conf&#34; data-language=&#34;conf&#34;&gt;&lt;code class=&#34;language-conf&#34;&gt;server {
+&lt;pre class=&#34;language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; /etc/nginx/conf.d/joplin.conf&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;language-conf&#34; data-language=&#34;conf&#34;&gt;&lt;code class=&#34;language-conf&#34;&gt;server {
     server_name  你的域名;
     listen 80;
     #return 301 https://$server_name$request_uri;
@@ -97,57 +98,55 @@ systemctl &lt;span class=&#34;token builtin class-name&#34;&gt;enable&lt;/span&g
         proxy_busy_buffers_size     64k;
         proxy_temp_file_write_size  64k;
     }
-}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;(3). 安装 certbot 配置https&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; python-certbot-nginx&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre class=&#34;language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;&lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; python-certbot-nginx&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;(4). 使用 certbot&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;certbot&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre class=&#34;language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;certbot&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;(5). 跟着提示走（不详说了，报错说明你nginx配置有问题请&lt;code&gt;nginx -t&lt;/code&gt;）&lt;/p&gt;
 &lt;p&gt;(6). 然后选&lt;code&gt;redirect&lt;/code&gt;（配置自动重定向https）&lt;/p&gt;
 &lt;p&gt;(7). 然后&lt;code&gt;nginx -s reload&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;9-使用宝塔配置反向代理实现https（与7二选一）&#34;&gt;&lt;a href=&#34;#9-使用宝塔配置反向代理实现https（与7二选一）&#34; class=&#34;headerlink&#34; title=&#34;9. 使用宝塔配置反向代理实现https（与7二选一）&#34;&gt;&lt;/a&gt;9. 使用宝塔配置反向代理实现https（与7二选一）&lt;/h3&gt;&lt;p&gt;(1). 安装宝塔并安装相关环境(nginx)&lt;/p&gt;
+&lt;h3 id=&#34;9-使用宝塔配置反向代理实现https（与7二选一）&#34;&gt;9. 使用宝塔配置反向代理实现https（与7二选一）&lt;/h3&gt;
+&lt;p&gt;(1). 安装宝塔并安装相关环境(nginx)&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;在”软件商店”安装nginx，或安装宝塔后在弹窗处一键安装&lt;/p&gt;
+&lt;p&gt;在&#34;软件商店&#34;安装nginx，或安装宝塔后在弹窗处一键安装&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.ibb.co/sv3GpBt/fc82c376bf7929de67a326ccdff1d7d2.png&#34; alt=&#34;fc82c376bf7929de67a326ccdff1d7d2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/fc82c376bf7929de67a326ccdff1d7d2.png&#34; alt=&#34;fc82c376bf7929de67a326ccdff1d7d2.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;(2). 添加站点&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;在”网站”中添加站点，填入自己已经配置好DNS解析的域名，PHP版本选择纯静态，其他默认就好&lt;/p&gt;
+&lt;p&gt;在&#34;网站&#34;中添加站点，填入自己已经配置好DNS解析的域名，PHP版本选择纯静态，其他默认就好&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.ibb.co/b712CNK/81af94ca85680cf9b70a4c4cae44af4f.png&#34; alt=&#34;81af94ca85680cf9b70a4c4cae44af4f.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/81af94ca85680cf9b70a4c4cae44af4f.png&#34; alt=&#34;81af94ca85680cf9b70a4c4cae44af4f.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;(3). 设置反向代理&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;打开新建的站点的”设置”，按步骤配置，填入要反代的地址，若JoplinServer在本机，在”目标URL”可填入&lt;code&gt;http://localhost:22300&lt;/code&gt;或&lt;code&gt;http://127.0.0.1:22300&lt;/code&gt;，若为其他服务器反代，填入&lt;code&gt;http://服务器IP:22300&lt;/code&gt;保存即可。&lt;/p&gt;
+&lt;p&gt;打开新建的站点的&#34;设置&#34;，按步骤配置，填入要反代的地址，若JoplinServer在本机，在&#34;目标URL&#34;可填入&lt;code&gt;http://localhost:22300&lt;/code&gt;或&lt;code&gt;http://127.0.0.1:22300&lt;/code&gt;，若为其他服务器反代，填入&lt;code&gt;http://服务器IP:22300&lt;/code&gt;保存即可。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.ibb.co/RB7dMYy/0b8cdaf4a62ca0f9f9b9b55826d56d7e.png&#34; alt=&#34;0b8cdaf4a62ca0f9f9b9b55826d56d7e.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/0b8cdaf4a62ca0f9f9b9b55826d56d7e.png&#34; alt=&#34;0b8cdaf4a62ca0f9f9b9b55826d56d7e.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;(4). 申请SSL证书&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;在站点设置中选择”SSL”，本文使用”Let’s Encrypt”申请，选择”验证方式”和”域名”即可。&lt;/p&gt;
+&lt;p&gt;在站点设置中选择&#34;SSL&#34;，本文使用&#34;Let’s Encrypt&#34;申请，选择&#34;验证方式&#34;和&#34;域名&#34;即可。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.ibb.co/DCv7GzG/550e54b49a741cf90278ea749fd9407a.png&#34; alt=&#34;550e54b49a741cf90278ea749fd9407a.png&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;10-访问域名&#34;&gt;&lt;a href=&#34;#10-访问域名&#34; class=&#34;headerlink&#34; title=&#34;10. 访问域名&#34;&gt;&lt;/a&gt;10. 访问域名&lt;/h3&gt;&lt;ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/550e54b49a741cf90278ea749fd9407a.png&#34; alt=&#34;550e54b49a741cf90278ea749fd9407a.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;10-访问域名&#34;&gt;10. 访问域名&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;JoplinServer默认账号&lt;code&gt;admin@localhost&lt;/code&gt;，默认密码&lt;code&gt;admin&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.ibb.co/hMCw5Qr/199245948fa412a00bb40eacb64d4a45.png&#34; alt=&#34;199245948fa412a00bb40eacb64d4a45.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/199245948fa412a00bb40eacb64d4a45.png&#34; alt=&#34;199245948fa412a00bb40eacb64d4a45.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;更改账户名和密码&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.ibb.co/D7N6QPY/4ccca67f24f1321c79b2259446dc96c6.png&#34; alt=&#34;4ccca67f24f1321c79b2259446dc96c6.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/4ccca67f24f1321c79b2259446dc96c6.png&#34; alt=&#34;4ccca67f24f1321c79b2259446dc96c6.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;还可在&lt;code&gt;Admin&lt;/code&gt;中的&lt;code&gt;User&lt;/code&gt;添加其他用户&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;11-在Joplin中配置&#34;&gt;&lt;a href=&#34;#11-在Joplin中配置&#34; class=&#34;headerlink&#34; title=&#34;11. 在Joplin中配置&#34;&gt;&lt;/a&gt;11. 在Joplin中配置&lt;/h3&gt;&lt;blockquote&gt;
+&lt;h3 id=&#34;11-在Joplin中配置&#34;&gt;11. 在Joplin中配置&lt;/h3&gt;
+&lt;blockquote&gt;
 &lt;p&gt;打开Joplin的选项&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.ibb.co/8XcGKwD/e7e504f0670e1d8be998d8f228b69be0.png&#34; alt=&#34;e7e504f0670e1d8be998d8f228b69be0.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;参考&#34;&gt;&lt;a href=&#34;#参考&#34; class=&#34;headerlink&#34; title=&#34;参考&#34;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/laurent22/joplin/blob/dev/packages/server/README.md&#34;&gt;官方部署文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/e7e504f0670e1d8be998d8f228b69be0.png&#34; alt=&#34;e7e504f0670e1d8be998d8f228b69be0.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/laurent22/joplin/blob/dev/packages/server/README.md&#34;&gt;官方部署文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cx03.space/2021/02/12/docker-%E9%83%A8%E7%BD%B2-joplin-server/&#34;&gt;复读机的记事本&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;note&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1Yb411c7Hi&#34;&gt;bilibili&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=fzN5LndPu3M&#34;&gt;youtube&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
