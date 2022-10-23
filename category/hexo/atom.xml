@@ -8,6 +8,9 @@
     <category term="Joplin" />
     <category term="JoplinServer" />
     <category term="笔记" />
+    <category term="Scoop" />
+    <category term="Scoop Bucket" />
+    <category term="包管理工具" />
     <entry>
         <id>https://blog.11l.nl/posts/3eeb/</id>
         <title>Hello World</title>

@@ -8,6 +8,9 @@
     <category term="Joplin" />
     <category term="JoplinServer" />
     <category term="笔记" />
+    <category term="Scoop" />
+    <category term="Scoop Bucket" />
+    <category term="包管理工具" />
     <entry>
         <id>https://blog.11l.nl/posts/50aa/</id>
         <title>使用Docker-compose部署JoplinServer</title>
@@ -104,31 +107,31 @@ systemctl &lt;span class=&#34;token builtin class-name&#34;&gt;enable&lt;/span&g
 &lt;blockquote&gt;
 &lt;p&gt;在&#34;软件商店&#34;安装nginx，或安装宝塔后在弹窗处一键安装&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/fc82c376bf7929de67a326ccdff1d7d2.png&#34; alt=&#34;fc82c376bf7929de67a326ccdff1d7d2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.ms27520.com/l/1/fc82c376bf7929de67a326ccdff1d7d2.png&#34; alt=&#34;fc82c376bf7929de67a326ccdff1d7d2.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;(2). 添加站点&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在&#34;网站&#34;中添加站点，填入自己已经配置好DNS解析的域名，PHP版本选择纯静态，其他默认就好&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/81af94ca85680cf9b70a4c4cae44af4f.png&#34; alt=&#34;81af94ca85680cf9b70a4c4cae44af4f.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.ms27520.com/l/1/81af94ca85680cf9b70a4c4cae44af4f.png&#34; alt=&#34;81af94ca85680cf9b70a4c4cae44af4f.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;(3). 设置反向代理&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;打开新建的站点的&#34;设置&#34;，按步骤配置，填入要反代的地址，若JoplinServer在本机，在&#34;目标URL&#34;可填入&lt;code&gt;http://localhost:22300&lt;/code&gt;或&lt;code&gt;http://127.0.0.1:22300&lt;/code&gt;，若为其他服务器反代，填入&lt;code&gt;http://服务器IP:22300&lt;/code&gt;保存即可。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/0b8cdaf4a62ca0f9f9b9b55826d56d7e.png&#34; alt=&#34;0b8cdaf4a62ca0f9f9b9b55826d56d7e.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.ms27520.com/l/1/0b8cdaf4a62ca0f9f9b9b55826d56d7e.png&#34; alt=&#34;0b8cdaf4a62ca0f9f9b9b55826d56d7e.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;(4). 申请SSL证书&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在站点设置中选择&#34;SSL&#34;，本文使用&#34;Let’s Encrypt&#34;申请，选择&#34;验证方式&#34;和&#34;域名&#34;即可。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/550e54b49a741cf90278ea749fd9407a.png&#34; alt=&#34;550e54b49a741cf90278ea749fd9407a.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.ms27520.com/l/1/550e54b49a741cf90278ea749fd9407a.png&#34; alt=&#34;550e54b49a741cf90278ea749fd9407a.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;10-访问域名&#34;&gt;10. 访问域名&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;JoplinServer默认账号&lt;code&gt;admin@localhost&lt;/code&gt;，默认密码&lt;code&gt;admin&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/199245948fa412a00bb40eacb64d4a45.png&#34; alt=&#34;199245948fa412a00bb40eacb64d4a45.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.ms27520.com/l/1/199245948fa412a00bb40eacb64d4a45.png&#34; alt=&#34;199245948fa412a00bb40eacb64d4a45.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;更改账户名和密码&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/4ccca67f24f1321c79b2259446dc96c6.png&#34; alt=&#34;4ccca67f24f1321c79b2259446dc96c6.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.ms27520.com/l/1/4ccca67f24f1321c79b2259446dc96c6.png&#34; alt=&#34;4ccca67f24f1321c79b2259446dc96c6.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;还可在&lt;code&gt;Admin&lt;/code&gt;中的&lt;code&gt;User&lt;/code&gt;添加其他用户&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -136,7 +139,7 @@ systemctl &lt;span class=&#34;token builtin class-name&#34;&gt;enable&lt;/span&g
 &lt;blockquote&gt;
 &lt;p&gt;打开Joplin的选项&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://mspicgo.11l.nl/e7e504f0670e1d8be998d8f228b69be0.png&#34; alt=&#34;e7e504f0670e1d8be998d8f228b69be0.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.ms27520.com/l/1/e7e504f0670e1d8be998d8f228b69be0.png&#34; alt=&#34;e7e504f0670e1d8be998d8f228b69be0.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/laurent22/joplin/blob/dev/packages/server/README.md&#34;&gt;官方部署文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cx03.space/2021/02/12/docker-%E9%83%A8%E7%BD%B2-joplin-server/&#34;&gt;复读机的记事本&lt;/a&gt;&lt;/p&gt;
