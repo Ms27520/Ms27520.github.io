@@ -47,6 +47,9 @@ search:
     input_placeholder: 搜索文章
     hits_empty: '找不到您查询的内容：${query}'
 
+random:
+  title: 随便逛逛
+
 pagination:
   prev: 上一篇
   next: 下一篇

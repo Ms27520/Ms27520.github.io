@@ -9,7 +9,7 @@ tags:
 categories: 笔记
 keywords: 笔记
 description: 使用Docker-compose部署JoplinServer
-top_img: https://mspicgo.11l.nl/20220924214414.png
+top_img: https://img.ms27520.com/l/1/20220924214414.png
 cover:
 toc:
 toc_number:
@@ -165,35 +165,35 @@ certbot
 
 > 在"软件商店"安装nginx，或安装宝塔后在弹窗处一键安装
 
-![fc82c376bf7929de67a326ccdff1d7d2.png](https://mspicgo.11l.nl/fc82c376bf7929de67a326ccdff1d7d2.png)
+![fc82c376bf7929de67a326ccdff1d7d2.png](https://img.ms27520.com/l/1/fc82c376bf7929de67a326ccdff1d7d2.png)
 
 (2). 添加站点
 
 > 在"网站"中添加站点，填入自己已经配置好DNS解析的域名，PHP版本选择纯静态，其他默认就好
 
-![81af94ca85680cf9b70a4c4cae44af4f.png](https://mspicgo.11l.nl/81af94ca85680cf9b70a4c4cae44af4f.png)
+![81af94ca85680cf9b70a4c4cae44af4f.png](https://img.ms27520.com/l/1/81af94ca85680cf9b70a4c4cae44af4f.png)
 
 (3). 设置反向代理
 
 > 打开新建的站点的"设置"，按步骤配置，填入要反代的地址，若JoplinServer在本机，在"目标URL"可填入`http://localhost:22300`或`http://127.0.0.1:22300`，若为其他服务器反代，填入`http://服务器IP:22300`保存即可。
 
-![0b8cdaf4a62ca0f9f9b9b55826d56d7e.png](https://mspicgo.11l.nl/0b8cdaf4a62ca0f9f9b9b55826d56d7e.png)
+![0b8cdaf4a62ca0f9f9b9b55826d56d7e.png](https://img.ms27520.com/l/1/0b8cdaf4a62ca0f9f9b9b55826d56d7e.png)
 
 (4). 申请SSL证书
 
 > 在站点设置中选择"SSL"，本文使用"Let’s Encrypt"申请，选择"验证方式"和"域名"即可。
 
-![550e54b49a741cf90278ea749fd9407a.png](https://mspicgo.11l.nl/550e54b49a741cf90278ea749fd9407a.png)
+![550e54b49a741cf90278ea749fd9407a.png](https://img.ms27520.com/l/1/550e54b49a741cf90278ea749fd9407a.png)
 
 ### 10. 访问域名
 
 - JoplinServer默认账号`admin@localhost`，默认密码`admin`
 
-![199245948fa412a00bb40eacb64d4a45.png](https://mspicgo.11l.nl/199245948fa412a00bb40eacb64d4a45.png)
+![199245948fa412a00bb40eacb64d4a45.png](https://img.ms27520.com/l/1/199245948fa412a00bb40eacb64d4a45.png)
 
 > 更改账户名和密码
 
-![4ccca67f24f1321c79b2259446dc96c6.png](https://mspicgo.11l.nl/4ccca67f24f1321c79b2259446dc96c6.png)
+![4ccca67f24f1321c79b2259446dc96c6.png](https://img.ms27520.com/l/1/4ccca67f24f1321c79b2259446dc96c6.png)
 
 > 还可在`Admin`中的`User`添加其他用户
 
@@ -201,7 +201,7 @@ certbot
 
 > 打开Joplin的选项
 
-![e7e504f0670e1d8be998d8f228b69be0.png](https://mspicgo.11l.nl/e7e504f0670e1d8be998d8f228b69be0.png)
+![e7e504f0670e1d8be998d8f228b69be0.png](https://img.ms27520.com/l/1/e7e504f0670e1d8be998d8f228b69be0.png)
 
 ## 参考
 
