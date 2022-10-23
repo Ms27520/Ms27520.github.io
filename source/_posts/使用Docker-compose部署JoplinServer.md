@@ -7,7 +7,7 @@ tags:
   - JoplinServer
   - 笔记
 categories: 笔记
-keywords: 笔记
+keywords: Joplin
 description: 使用Docker-compose部署JoplinServer
 top_img: https://img.ms27520.com/l/1/20220924214414.png
 cover:
