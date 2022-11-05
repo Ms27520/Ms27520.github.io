@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "只是芒果 • All posts by \"现代诗\" tag",
+    "description": "",
+    "home_page_url": "https://blog.11l.nl",
+    "items": [
+        {
+            "id": "https://blog.11l.nl/posts/6abc/",
+            "url": "https://blog.11l.nl/posts/6abc/",
+            "title": "诗",
+            "date_published": "2022-11-05T09:25:00.000Z",
+            "content_html": "<div class=\"tabs\" id=\"xiandaishi\"><ul class=\"nav-tabs\"><li class=\"tab active\"><button type=\"button\" data-href=\"#xiandaishi-1\">现代诗</button></li><li class=\"tab\"><button type=\"button\" data-href=\"#xiandaishi-2\">古诗</button></li></ul><div class=\"tab-contents\"><div class=\"tab-item-content active\" id=\"xiandaishi-1\"><hr>\n<center>\n<h3 id=\"老马\">老马</h3>\n<p><code>臧克家</code></p>\n<p>总得叫大车装个够，<br>\n它横竖不说一句话，<br>\n背上的压力往肉里扣，<br>\n它把头沉重地垂下！<br>\n这刻不知道下刻的命，<br>\n它有泪只往心里咽，<br>\n眼里飘来一道鞭影，<br>\n它抬起头望望前面。</p>\n</center>\n<p align=\"right\">一九三二年四月</p>\n<hr>\n<center>\n<h3 id=\"有的人\">有的人</h3>\n<p><code>臧克家</code></p>\n<p>有的人活着<br>\n他已经死了；<br>\n有的人死了<br>\n他还活着。<br>\n有的人<br>\n骑在人民头上：“啊，我多伟大！”<br>\n有的人<br>\n俯下身子给人民当牛马。<br>\n有的人<br>\n把名字刻入石头，想“不朽”；<br>\n有的人<br>\n情愿作野草，等着地下的火烧。<br>\n有的人<br>\n他活着别人就不能活；<br>\n有的人<br>\n他活着为了多数人更好地活。<br>\n骑在人民头上的<br>\n人民把他摔垮；<br>\n给人民作牛马的<br>\n人民永远记住他！<br>\n把名字刻入石头的<br>\n名字比尸首烂得更早；<br>\n只要春风吹到的地方<br>\n到处是青青的野草。<br>\n他活着别人就不能活的人，<br>\n他的下场可以看到；<br>\n他活着为了多数人更好地活着的人，<br>\n群众把他抬举得很高，很高。</p>\n<p align=\"right\">纪念鲁迅逝世十三周年有感</p>\n</center><button type=\"button\" class=\"tab-to-top\" aria-label=\"scroll to top\"><i class=\"fas fa-arrow-up\"></i></button></div><div class=\"tab-item-content\" id=\"xiandaishi-2\"><hr>\n<center>\n<h3 id=\"临江仙·夜饮东坡醒复醉\">临江仙·夜饮东坡醒复醉</h3>\n<p><code>苏轼</code></p>\n<p>夜饮东坡醒复醉，归来仿佛三更。家童鼻息已雷鸣。敲门都不应，倚杖听江声。<br>\n长恨此身非我有，何时忘却营营？夜阑风静縠纹平。小舟从此逝，江海寄余生。</p>\n</center><button type=\"button\" class=\"tab-to-top\" aria-label=\"scroll to top\"><i class=\"fas fa-arrow-up\"></i></button></div></div></div>",
+            "tags": [
+                "现代诗"
+            ]
+        }
+    ]
+}

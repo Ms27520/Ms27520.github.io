@@ -8,12 +8,10 @@
         <pubDate>Tue, 07 Sep 2021 01:25:00 +0000</pubDate>
         <lastBuildDate>Tue, 07 Sep 2021 01:25:00 +0000</lastBuildDate>
         <category>Hexo</category>
+        <category>现代诗</category>
         <category>Joplin</category>
         <category>JoplinServer</category>
         <category>笔记</category>
-        <category>Scoop</category>
-        <category>Scoop Bucket</category>
-        <category>包管理工具</category>
         <item>
             <guid isPermalink="true">https://blog.11l.nl/posts/50aa/</guid>
             <title>使用Docker-compose部署JoplinServer</title>
