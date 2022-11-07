@@ -10,7 +10,8 @@ module.exports = {
     runtimeCaching: [ // 如果你需要加载 CDN 资源，请配置该选项，如果没有，可以不配置。
       // CDNs - should be CacheFirst, since they should be used specific versions so should not change
       {
-        urlPattern: /^https:\/\/cdn\.example\.com\/.*/, // 可替换成你的 URL
+        //urlPattern: /^https:\/\/cdn\.example\.com\/.*/, // 可替换成你的 URL
+        urlPattern: https://blog.11l.nl, // 可替换成你的 URL
         handler: 'CacheFirst'
       }
     ]
