@@ -182,4 +182,8 @@ aplayer:
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: 'git'
+  repo: https://codeberg.org/ms27520/pages.git
+  branch: main
+  message: 'update'
+  token: 980120b75d44ce11501f49a42850819ceb3372c5
