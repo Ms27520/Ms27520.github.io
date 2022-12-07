@@ -893,7 +893,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
-    - <style type="text/css"> *{filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);} </style>
+    # - <style type="text/css"> *{filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);} </style>
   bottom:
     # - <script src="xxxx"></script>
     - <div class="aplayer no-destroy" data-id="868001536" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false"> </div>
